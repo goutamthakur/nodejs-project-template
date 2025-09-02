@@ -8,6 +8,10 @@ const app = express();
 
 app.use(HelmetConfig);
 
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+
 app.use("/api", apiRoutes);
 
 app.use("/health", (req, res) => {
