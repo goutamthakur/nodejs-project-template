@@ -1,9 +1,11 @@
 const express = require("express");
 
-const { ServerConfig } = require("./config");
+const { ServerConfig, HelmetConfig } = require("./config");
 const apiRoutes = require("./routes");
 
 const app = express();
+
+app.use(HelmetConfig);
 
 app.use("/api", apiRoutes);
 
