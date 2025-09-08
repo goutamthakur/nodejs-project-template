@@ -1,7 +1,13 @@
+const Broker = require("./broker");
+const Publisher = require("./publishers");
+const Subscriber = require("./subscribers");
+const Handler = require("./handlers");
+const Constant = require("./constants");
+
 module.exports = {
-  Broker: require("./broker"),
-  Publisher: require("./publishers"),
-  Subscriber: require("./subscribers"),
-  Handler: require("./handlers"),
-  Constants: require("./constants"),
+  Broker,
+  Publisher,
+  Subscriber,
+  Handler,
+  Constant,
 };

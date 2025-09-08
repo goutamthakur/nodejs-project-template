@@ -1,5 +1,9 @@
+const ServerConfig = require("./server-config");
+const Logger = require("./logger-config");
+const HelmetConfig = require("./helmet-config");
+
 module.exports = {
-  ServerConfig: require("./server-config"),
-  Logger: require("./logger-config"),
-  HelmetConfig: require("./helmet-config"),
+  ServerConfig,
+  Logger,
+  HelmetConfig,
 };

@@ -1,4 +1,7 @@
+const SuccessResponse = require("./success-response");
+const ErrorResponse = require("./error-response");
+
 module.exports = {
-  ErrorResponse: require("./error-response"),
-  SuccessResponse: require("./success-response"),
+  SuccessResponse,
+  ErrorResponse,
 };
