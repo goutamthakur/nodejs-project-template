@@ -1,16 +1,18 @@
 const express = require("express");
 
-const { ServerConfig, HelmetConfig } = require("./config");
+const { ServerConfig, HelmetConfig, LimiterConfig } = require("./config");
 const apiRoutes = require("./routes");
 const jobs = require("./jobs");
 
 const app = express();
 
-app.use(HelmetConfig);
-
 app.use(express.json());
-  
+
 app.use(express.urlencoded({ extended: true }));
+
+app.use(LimiterConfig.limiter);
+
+app.use(HelmetConfig);
 
 app.use("/api", apiRoutes);
 
