@@ -7,10 +7,11 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 1000,
   handler: (req, res) => {
-    res.status(StatusCodes.TOO_MANY_REQUESTS).json({
-      ...ErrorResponse,
-      error: "Too many requests, please try again later.",
-    });
+    res
+      .status(StatusCodes.TOO_MANY_REQUESTS)
+      .json(
+        ErrorResponse("Too many requests, please try again later.", {}, {})
+      );
   },
   standardHeaders: true,
   legacyHeaders: false,
